@@ -1,0 +1,64 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signup</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/signup.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <div class="container">
+        <form id="signup-form" action="{% url 'accounts:signup' %}" method="post">
+            <div id="popup-container" style="display: block; background-color:aqua; ">
+                {% for message in messages %}
+                    <div class="popup-notification alert alert-{{ message.tags }}" style="color:red">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            {% csrf_token %}
+          <h2>Create an Account</h2>
+          <div class="form-group">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
+          <div class="form-group">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+          </div>
+          <div class="form-group">
+            <button type="submit">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    <script>
+        function dismissNotification(notification) {
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 3000); // 3000 milliseconds (3 seconds) delay
+        }
+    
+        // Get all notification elements and dismiss them after a delay
+        var notifications = document.querySelectorAll('.popup-notification');
+        notifications.forEach(function(notification) {
+            dismissNotification(notification);
+        });
+    </script>
+  </body>
+</html>

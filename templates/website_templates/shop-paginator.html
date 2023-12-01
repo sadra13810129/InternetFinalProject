@@ -1,0 +1,12 @@
+{% load static %}
+
+<div class="product__pagination">
+    {% for i in items.paginator.page_range %}
+    {% if i == items.number %}
+    <a href="?page={{i}}" style="background-color:chartreuse">{{i}}</a>
+    {% else %}
+    <a href="?page={{i}}">{{i}}</a>
+    {% endif %}
+
+    {% endfor %}
+</div>
