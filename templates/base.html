@@ -29,76 +29,11 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
-    <!-- Humberger Begin -->
-    <!-- <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="#"><img src="{% static 'img/SAM.png' %}" alt="LOGO"></a>
-        </div>
-        <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div>
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="{% static 'img/language.png' %}" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">ads</a></li>
-                </ul>
-            </div>
-            <div class="header__top__right__auth">
-                 {% if request.user.is_authenticated %}
-                <a href="#"><i class="fa fa-user"></i> Logged in as {{request.user.username}}</a>
-                <a href="{% url 'accounts:logout' %}" ><i class="fa fa-user"></i>Logout</a>
-                {% else %}
-                <a href="{% url 'accounts:login' %}" ><i class="fa fa-user"></i>Login</a>
-                <a href="{% url 'accounts:signup' %}" ><i class="fa fa-user"></i>Sign up</a>
-                {% endif %}-->
-            <!-- </div> 
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Hsade</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                    </ul>
-                </li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
-            </ul>
-        </div>
-    </div> --> 
-    <!-- Humberger End -->
-
-    <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
+                    <div class="">
                         <div class="header__top__left">
                             <ul>
                                 {% if request.user.is_authenticated %}
@@ -114,6 +49,13 @@
 
                 </div>
             </div>
+            <div id="popup-container" style="display: block; background-color:aqua; ">
+                {% for message in messages %}
+                    <div class="popup-notification alert alert-{{ message.tags }}" style="color:red">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
         <div class="container">
             <div class="row">
@@ -122,12 +64,7 @@
                         <a href="#"><img src="{% static 'img/SAM.png' %}" alt="LOGO"></a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                        </ul>
-                    </nav>
-                </div>
+  
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
@@ -136,9 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
+
         </div>
     </header>
 
@@ -146,36 +81,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Notebook</a></li>
-                            <li><a href="#">Pen and Pencils</a></li>
-                            <li><a href="#">Highlighter</a></li>
-                            <li><a href="#">Printer</a></li>
-                            <li><a href="#">Card Holder</a></li>
-                            <li><a href="#">Document Holder</a></li>
-                            <li><a href="#">Paper Tray</a></li>
-                        </ul>
-                    </div>
+                    
+                        
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
+                        {% include 'website_templates/search.html' %}
+                        
                         <div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>09111234567</h5>
+                                <h5>09101245263</h5>
                                 <span>support 24/7 time</span>
                             </div>
                         </div>
@@ -189,7 +107,7 @@
                             <br>
                             <!-- <h2>Vegetable <br />100% Organic</h2> -->
                             <!-- <p>Free Pickup and Delivery Available</p> -->
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <a href="{% url 'website:shop' %}" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
@@ -198,7 +116,7 @@
     </section>
     {% block content %}
     {% endblock %}
-    <footer class="footer spad">
+    <!-- <footer class="footer spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -252,11 +170,8 @@
                 </div>
             </div>
         </div>
-        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                                  <div class="footer__copyright__payment"><img src="{% static 'img/payment-item.png' %}" alt=""></div>
-    </footer>
+
+    </footer> -->
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
@@ -300,6 +215,9 @@
         notifications.forEach(function(notification) {
             dismissNotification(notification);
         });
+
+
+        
     </script>
 </body>
 

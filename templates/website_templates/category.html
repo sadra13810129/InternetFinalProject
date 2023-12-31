@@ -1,0 +1,11 @@
+<div class="hero__categories">
+<div class="hero__categories__all">
+    <i class="fa fa-bars"></i>
+    <span>Categories</span>
+</div>
+<ul>
+    {% for tag in tags %}
+    <li><a href="{% url 'website:tag' tag_name=tag.name %}">{{tag.name}}</a></li>
+    {% endfor %}
+</ul>
+</div>

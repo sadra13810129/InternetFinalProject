@@ -32,186 +32,43 @@
                 <div class="col-lg-3 col-md-5">
                     <div class="sidebar">
 
-                        <div class="sidebar__item">
-                            <h4>Price</h4>
-                            <div class="price-range-wrap">
-                                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                    data-min="10" data-max="540">
-                                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                </div>
-                                <div class="range-slider">
-                                    <div class="price-input">
-                                        <input type="text" id="minamount">
-                                        <input type="text" id="maxamount">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="sidebar__item sidebar__item__color--option">
-                            <h4>Colors</h4>
-                            <div class="sidebar__item__color sidebar__item__color--white">
-                                <label for="white">
-                                    White
-                                    <input type="radio" id="white">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__color sidebar__item__color--gray">
-                                <label for="gray">
-                                    Gray
-                                    <input type="radio" id="gray">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__color sidebar__item__color--red">
-                                <label for="red">
-                                    Red
-                                    <input type="radio" id="red">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__color sidebar__item__color--black">
-                                <label for="black">
-                                    Black
-                                    <input type="radio" id="black">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__color sidebar__item__color--blue">
-                                <label for="blue">
-                                    Blue
-                                    <input type="radio" id="blue">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__color sidebar__item__color--green">
-                                <label for="green">
-                                    Green
-                                    <input type="radio" id="green">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="sidebar__item">
-                            <h4>Popular Size</h4>
-                            <div class="sidebar__item__size">
-                                <label for="large">
-                                    Large
-                                    <input type="radio" id="large">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="medium">
-                                    Medium
-                                    <input type="radio" id="medium">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="small">
-                                    Small
-                                    <input type="radio" id="small">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="tiny">
-                                    Tiny
-                                    <input type="radio" id="tiny">
-                                </label>
-                            </div>
-                        </div> -->
-                        <div class="sidebar__item">
-                            <div class="latest-product__text">
-                                <h4>Latest Products</h4>
-                                <div class="latest-product__slider owl-carousel">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-1.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Dog theme Notebooks</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-2.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>ColorFul Notebooks</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-3.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>ColorFul Notebooks</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-4.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Blue & Red Pencils</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-5.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Blue & Red Cutters</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-6.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Printer</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% include 'website_templates/category.html' %}
                     </div>
-                    {% include 'website_templates/shop-paginator.html' %}
+                    
                 </div>
-                <div class="col-lg-9 col-md-7">
+                <div class="col-lg-9 col-md-7" >
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
-                                <div class="filter__sort">
+                                <!-- <div class="filter__sort">
                                     <span>Sort By</span>
-                                    <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
-                                    </select>
-                                </div>
+                                    
+
+                                    
+                                </div> -->
+                                <div class="dropdown">
+                                    <button class="dropbtn">Filter</button>
+                                    <div class="dropdown-content">
+                                        <a href = "{% url 'website:shop' filter='latest' %}">Default(latest)</a>
+                                        <a href = "{% url 'website:shop' filter='lower' %}">lower price</a>
+                                     <a href = "{% url 'website:shop' filter='highter' %}">highter price</a>
+                                    <a href = "{% url 'website:shop' filter='discount' %}">highter discount</a>
+                                    </div>
+                                  </div> 
+
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
                                     <h6><span>{{items|length}}</span> Products found</h6>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-3">
-                                <div class="filter__option">
-                                    <span class="icon_grid-2x2"></span>
-                                    <span class="icon_ul"></span>
-                                </div>
-                            </div>
+    
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" >
                         {% for item in items %}
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            
+                            {% if user.is_authenticated %}
                             <a href="{% url 'website:single' pid=item.id %}"><div class="product__item">
                                 {% if item.off %}
                                 <div class="product__discount__item">
@@ -221,20 +78,46 @@
                                 </div>
                                 </div>
                                 <div class="product__discount__item__text">
-                                    <h5><a href="#">ColorFul Notebooks</a></h5>
+                                    <h5><a>{{item.title}}</h5></a>
                                     <div class="product__item__price">{{item.final_price}}$ <span>{{item.price}}$</span></div>
                                 </div>
                                 {% else %}
                                 <div class="product__item__pic set-bg" data-setbg="{{item.image.url}}">
                                 </div>
-                                <div class="product__item__text">
+                                <div class="product__discount__item__text">
                                     <h5><a href="#">{{item.title}}</a></h5>
-                                    <h5>{{item.price}}</h5>
+                                    <div class="product__item__price">{{item.price}}$</div>
                                 </div>
                                 
                                 {% endif %}
                             </div></a>
                             
+                            {% else %}
+                            <a href="{% url 'accounts:login' %}"><div class="product__item">
+                                {% if item.off %}
+                                <div class="product__discount__item">
+                                    <div class="product__discount__item__pic set-bg"
+                                        data-setbg="{{item.image.url}}">
+                                        <div class="product__discount__percent">{{item.discount}}%</div>
+                                </div>
+                                </div>
+                                <div class="product__discount__item__text">
+                                    <h5><a href="#">{{item.title}}</a></h5>
+                                    <div class="product__item__price">{{item.final_price}}$ <span>{{item.price}}$</span></div>
+                                </div>
+                                {% else %}
+                                <div class="product__item__pic set-bg" data-setbg="{{item.image.url}}">
+                                </div>
+                                <div class="product__discount__item__text">
+                                    <h5><a href="#">{{item.title}}</a></h5>
+                                    <div class="product__item__price">{{item.price}}$</div>
+                                </div>
+                                
+                                {% endif %}
+                            </div></a>
+                            
+                            {% endif %}
+                               
                             
                         </div>
                         {% endfor %}
@@ -244,10 +127,13 @@
 
                     
                 </div>
-               
+                {% include 'website_templates/shop-paginator.html' %}
             </div>
+            
         </div>
+        
     </section>
+    
     <!-- Product Section End -->
 
   {% endblock %}

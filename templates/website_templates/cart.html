@@ -2,54 +2,7 @@
 
 {% block content %}
 {% load static %}
-    <!-- Hero Section Begin -->
-    <section class="hero hero-normal">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Notebook</a></li>
-                            <li><a href="#">Pen and Pencils</a></li>
-                            <li><a href="#">Highlighter</a></li>
-                            <li><a href="#">Printer</a></li>
-                            <li><a href="#">Card Holder</a></li>
-                            <li><a href="#">Document Holder</a></li>
-                            <li><a href="#">Paper Tray</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>09111234567</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
+
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="{% static 'img/art-materials-colored-pencils.webp' %}">
@@ -59,7 +12,7 @@
                     <div class="breadcrumb__text">
                         <h2>Shopping Cart</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
+                            <a href="{% url 'website:shop' %}">Shop</a>
                             <span>Shopping Cart</span>
                         </div>
                     </div>
@@ -108,9 +61,7 @@
                                     <td class="shoping__cart__total">
                                        {{orderitem.get_total}}$
                                     </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
+
                                 </tr>
                                 {% endfor %}
 
@@ -121,11 +72,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="shoping__cart__btns">
-                        <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
-                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                            Upadate Cart</a>
-                    </div>
+
                 </div>
                 <!-- <div class="col-lg-6">
                     <div class="shoping__continue">

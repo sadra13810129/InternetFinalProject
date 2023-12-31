@@ -12,21 +12,19 @@ class Item(models.Model):
         
     ]
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='blog/')
-    categotry = TaggableManager()
+    image = models.ImageField(upload_to='items_image/')
+    category = TaggableManager()
     off = models.BooleanField(default=False)
     description = models.TextField()
-    counted_order = models.IntegerField(default=0)
     status = models.BooleanField(default=False)
-    published_date = models.DateTimeField(null=True)
+    published_date = models.DateTimeField()
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-    login_require = models.BooleanField(default=False)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     discount = models.DecimalField(max_digits=10, decimal_places=2)
     final_price = models.DecimalField(max_digits=10, decimal_places=2, editable=False, null=True, blank=True)
     size = models.CharField(max_length=10, choices=Size_options)
-    color = models.CharField(max_length=10)
+    color = models.CharField(max_length=255)
     def save(self, *args, **kwargs):
         if self.discount is not None:
             self.final_price = self.price - (self.discount * self.price) / 100
@@ -47,12 +45,13 @@ class Item(models.Model):
 
     
 class Customer(models.Model):
-    user = models.OneToOneField(User,null=True,blank=True,on_delete=models.CASCADE)
-    name = models.CharField(max_length=255,null=True)
-    emal = models.EmailField()
-    
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, null=True)
+    email = models.EmailField()  # Corrected typo from 'emal' to 'email'
+
     def __str__(self):
         return self.name
+
         
         
 class Order(models.Model):

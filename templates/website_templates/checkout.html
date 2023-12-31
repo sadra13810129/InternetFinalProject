@@ -13,7 +13,7 @@
                     <div class="breadcrumb__text">
                         <h2>Checkout</h2>
                         <div class="breadcrumb__option">
-                            <a href="{% url 'website:index' %}">Home</a>
+                            <a href="{% url 'website:shop' %}">Shop</a>
                             <span>Checkout</span>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                 <div class="checkout__order__subtotal">Total Items <span>{{order.get_cart_items}}</span></div>
                                 <div class="checkout__order__total">Total Price <span>{{order.get_cart_total}}$</span></div>
 
-                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                                <button type="" class="site-btn"><a href="{% url 'website:shop' %}">PLACE ORDER</a></button>
                             </div>
                         </div>
                     </div>

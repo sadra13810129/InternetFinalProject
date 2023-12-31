@@ -22,23 +22,17 @@
 
     <div class="container">
         <form id="login-form" action="{% url 'accounts:login' %}" method="post">
-            <div id="popup-container" style="display: block; background-color:aqua; ">
-                {% for message in messages %}
-                    <div class="popup-notification alert alert-{{ message.tags }}" style="color:red">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
+ 
                 {% csrf_token %}
           <h2>Login to Your Account</h2>
           <div class="form-group">
-            <input type="text" id="usernameOrEmail" name="usernameOrEmail" placeholder="Username or Email" >
+            <input type="text" id="usernameOrEmail" name="username" placeholder="Username or Email" >
           </div>
           <div class="form-group">
             <input type="password" id="password" name="password" placeholder="Password" >
           </div>
           <div class="forgot-password">
-            <a href="#">Forgot Password?</a>
+            <a href="{% url 'accounts:forgot_password' %}">Forgot Password?</a>
           </div>
           <div class="form-group">
             <button type="submit">Login</button>
